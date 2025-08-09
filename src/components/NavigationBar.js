@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { Navbar, Container, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 function NavigationBar() {
@@ -13,12 +15,12 @@ function NavigationBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto align-items-center gap-2">
-            <Nav.Link href="#hero" className="fw-semibold">Home</Nav.Link>
-            <Nav.Link href="#services" className="fw-semibold">Services</Nav.Link>
-            <Nav.Link href="#fleet" className="fw-semibold">Fleet</Nav.Link>
-            <Nav.Link href="#about" className="fw-semibold">About</Nav.Link>
-            <Nav.Link href="#contact" className="fw-semibold">Contact</Nav.Link>
-            <a href="#get-quote" className="btn btn-warning fw-bold ms-3 px-4 py-2 rounded-pill shadow-sm">Book Now</a>
+            <Nav.Link as={Link} to="/" className="fw-semibold">Home</Nav.Link>
+            <Nav.Link as={Link} to="/services" className="fw-semibold">Services</Nav.Link>
+            <Nav.Link as={Link} to="/fleet" className="fw-semibold">Fleet</Nav.Link>
+            <Nav.Link as={Link} to="/about" className="fw-semibold">About</Nav.Link>
+            <Nav.Link as={Link} to="/contact" className="fw-semibold">Contact</Nav.Link>
+            <Link to="/booking" className="btn btn-warning fw-bold ms-3 px-4 py-2 rounded-pill shadow-sm">Book Now</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

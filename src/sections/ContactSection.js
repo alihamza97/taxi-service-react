@@ -8,8 +8,8 @@ const ContactSection = () => (
         <div className="col-md-6">
           <div className="card shadow-sm mb-3">
             <div className="card-body">
-              <p><strong>Address:</strong> 1109 Longview Avenue, United Kingdom</p>
-              <p><strong>Phone:</strong> <a href="tel:02037458464">020 37458464</a> (Mon - Sunday: 00:00 - 24:00)</p>
+              <p><strong>Address:</strong> 214 Longview Av, London, United Kingdom</p>
+              <p><strong>Phone:</strong> <a href="tel:0203535622">020 3535622</a> (Mon - Sunday: 00:00 - 24:00)</p>
               <p><strong>Email:</strong> <a href="mailto:info@taxiservice.co.uk">info@taxiservice.co.uk</a> (We reply within few minutes)</p>
               <div className="mb-2">
                 <strong>Social:</strong> <br />
