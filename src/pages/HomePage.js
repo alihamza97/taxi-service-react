@@ -1,5 +1,5 @@
-import React from 'react';
-import HeroLuxury from '../sections/HeroLuxury';
+import React from "react";
+import HeroLuxury from "../sections/HeroLuxury";
 
 const HomePage = () => <HeroLuxury />;
 

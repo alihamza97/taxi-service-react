@@ -1,5 +1,5 @@
-import React from 'react';
-import ServicesSection from '../sections/ServicesSection';
+import React from "react";
+import ServicesSection from "../sections/ServicesSection";
 
 const ServicesPage = () => <ServicesSection />;
 

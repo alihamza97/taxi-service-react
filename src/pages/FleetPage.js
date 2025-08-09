@@ -1,8 +1,4 @@
-
-
-
-
-import FleetSection from '../sections/FleetSection';
+import FleetSection from "../sections/FleetSection";
 
 const FleetPage = () => <FleetSection />;
 

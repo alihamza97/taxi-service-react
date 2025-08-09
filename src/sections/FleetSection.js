@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const FleetSection = () => (
   <section id="fleet" className="fleet-section py-5 bg-light">

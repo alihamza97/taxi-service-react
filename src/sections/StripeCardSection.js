@@ -1,14 +1,14 @@
-import React from 'react';
-import { CardElement } from '@stripe/react-stripe-js';
+import React from "react";
+import { CardElement } from "@stripe/react-stripe-js";
 
 const CARD_ELEMENT_OPTIONS = {
   style: {
     base: {
-      fontSize: '18px',
-      color: '#32325d',
-      '::placeholder': { color: '#aab7c4' },
+      fontSize: "18px",
+      color: "#32325d",
+      "::placeholder": { color: "#aab7c4" },
     },
-    invalid: { color: '#fa755a', iconColor: '#fa755a' },
+    invalid: { color: "#fa755a", iconColor: "#fa755a" },
   },
 };
 
