@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useStripe, useElements } from "@stripe/react-stripe-js";
 import StripeCardSection from "./StripeCardSection";
+import { createBooking } from '../api/bookingApi';
+import { createPaymentIntent } from '../api/paymentApi';
 const GetAQuoteSection = ({
   car,
   form: tripForm,
