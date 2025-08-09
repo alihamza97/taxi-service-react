@@ -1,5 +1,5 @@
 import React from 'react';
-import HeroSection from '../sections/HeroSection';
+import HeroLuxury from '../sections/HeroLuxury';
 import GetAQuoteSection from '../sections/GetAQuoteSection';
 import ServicesSection from '../sections/ServicesSection';
 import HowItWorks from '../sections/HowItWorks';
@@ -11,7 +11,7 @@ import NewsletterSection from '../sections/NewsletterSection';
 
 const Home = () => (
   <>
-    <HeroSection />
+  <HeroLuxury />
     <GetAQuoteSection />
     <ServicesSection />
     <HowItWorks />

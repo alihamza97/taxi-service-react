@@ -1,20 +1,24 @@
 import React from 'react';
-
 import { Navbar, Container, Nav } from 'react-bootstrap';
+
 
 function NavigationBar() {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
+    <Navbar bg="white" variant="light" expand="lg" sticky="top" className="shadow-sm py-2">
       <Container>
-        <a href="#hero" className="navbar-brand">Taxi Service</a>
+        <a href="#hero" className="navbar-brand d-flex align-items-center gap-2">
+          <img src="https://img.icons8.com/ios-filled/50/000000/taxi.png" alt="Taxi Logo" width="36" height="36" style={{marginRight: 8}} />
+          <span className="fw-bold fs-4" style={{letterSpacing: '1px'}}>Taxi Service</span>
+        </a>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link href="#hero">Home</Nav.Link>
-            <Nav.Link href="#services">Services</Nav.Link>
-            <Nav.Link href="#get-quote">Book a Taxi</Nav.Link>
-            <Nav.Link href="#fleet">Fleet</Nav.Link>
-            <Nav.Link href="#contact">Contact</Nav.Link>
+          <Nav className="ms-auto align-items-center gap-2">
+            <Nav.Link href="#hero" className="fw-semibold">Home</Nav.Link>
+            <Nav.Link href="#services" className="fw-semibold">Services</Nav.Link>
+            <Nav.Link href="#fleet" className="fw-semibold">Fleet</Nav.Link>
+            <Nav.Link href="#about" className="fw-semibold">About</Nav.Link>
+            <Nav.Link href="#contact" className="fw-semibold">Contact</Nav.Link>
+            <a href="#get-quote" className="btn btn-warning fw-bold ms-3 px-4 py-2 rounded-pill shadow-sm">Book Now</a>
           </Nav>
         </Navbar.Collapse>
       </Container>
