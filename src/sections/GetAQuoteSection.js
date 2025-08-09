@@ -41,41 +41,22 @@ const GetAQuoteSection = ({
     }
     try {
       // 1. Create booking
-      // Convert passengers and bags to integers for backend compatibility
-      const bookingPayload = {
-        ...form,
-        passengers: form.passengers ? parseInt(form.passengers, 10) : null,
-        bags: form.bags ? parseInt(form.bags, 10) : null,
-      };
-      const bookingRes = await fetch("http://localhost:8080/api/bookings", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(bookingPayload),
-      });
-      if (!bookingRes.ok) throw new Error("Failed to create booking");
-      const bookingData = await bookingRes.json();
-      const bookingId =
-        bookingData.id || bookingData.bookingId || bookingData._id;
-      if (!bookingId) throw new Error("No bookingId returned");
-
-      // 2. Create payment intent
-      // For demo, use 1000 pence (£10) or car.price if available
-      let amount = 1000;
-      if (car && car.price) {
-        const priceNum = parseFloat(car.price.replace(/[^\d.]/g, ""));
         if (!isNaN(priceNum)) amount = Math.round(priceNum * 100);
-      }
-      const paymentRes = await fetch(
-        "http://localhost:8080/api/payment-intent",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ amount, bookingId }),
-        },
-      );
-      if (!paymentRes.ok) throw new Error("Failed to create payment intent");
-      const paymentData = await paymentRes.json();
-      const newClientSecret = paymentData.clientSecret;
+        // 1. Create booking
+        const bookingData = await createBooking(form);
+        const bookingId = bookingData.id || bookingData.bookingId || bookingData._id;
+        if (!bookingId) throw new Error('No bookingId returned');
+
+        // 2. Create payment intent
+        let amount = 1000;
+        if (car && car.price) {
+          const priceNum = parseFloat(car.price.replace(/[^\d.]/g, ''));
+          if (!isNaN(priceNum)) amount = Math.round(priceNum * 100);
+        }
+        const paymentData = await createPaymentIntent(amount, bookingId);
+        const newClientSecret = paymentData.clientSecret;
+        if (!newClientSecret) throw new Error('No client secret returned');
+        setClientSecret(newClientSecret);
       if (!newClientSecret) throw new Error("No client secret returned");
       setClientSecret(newClientSecret);
 
